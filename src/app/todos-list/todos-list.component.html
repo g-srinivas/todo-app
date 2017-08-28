@@ -1,0 +1,22 @@
+<a class="btn btn-success" routerLink="/todos/add">+ ToDO</a>
+<table class="table table-stripped">
+  <thead>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Completed</th>
+  </thead>
+  <tbody *ngFor="let item of todos">
+    <tr>
+      <td>{{item.id}}</td>
+      <td>{{item.title}}</td>
+      <td>
+        <input type="checkbox" [checked]="item.completed" />
+      </td>
+      <td>
+        <a [routerLink]="['/todos', item.id, 'edit' ]">
+           Edit
+          </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

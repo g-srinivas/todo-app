@@ -1,0 +1,12 @@
+<form #f="ngForm" class="col-md-6">
+  <div class="form-group">
+    <label for="tital">Title</label>
+    <input type="email" class="form-control" placeholder="Enter title" name="title" [ngModel]="item.title">
+  </div>
+  <!-- <div class="form-group">
+    <button class="btn btn-success" (click)="onSubmit(f)">Add</button>
+  </div> -->
+  <div>
+    <a routerLink="/todos/" class="btn btn-success">Back To List</a>
+  </div>
+</form>
