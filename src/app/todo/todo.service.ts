@@ -10,7 +10,7 @@ export class ToDoService {
     return this.todos.count() + 1;
   }
   getToDos() {
-    return this.todos.toArray();
+    return this.todos.toList();
   }
 
   getToDoById(id: number) {
