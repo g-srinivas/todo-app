@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { ToDoItem } from '../todo';
 @Component({
   selector: 'app-todos-list',
@@ -7,6 +7,12 @@ import { ToDoItem } from '../todo';
 })
 export class TodosListComponent {
   @Input() todos: Array<ToDoItem> = [];
+
+  @Output() refreshToDos = new EventEmitter<void>();
+
+  onRefresh() {
+    this.refreshToDos.emit();
+  }
 
   constructor() {}
 }

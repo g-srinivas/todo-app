@@ -1,14 +1,15 @@
-
 <div class="col-md-2 text-center">
-  <span >{{item.id}}</span>
+  <span>{{item.id}}</span>
 </div>
 <div class="col-md-4 text-center">
-    {{item.title}}
+  {{item.title}}
 </div>
 <div class="col-md-2 text-center">
-      {{item.complete}}
+  <input type="checkbox" [checked]="item.complete" (change)="onChange(item.id, $event)" />
 </div>
 <div class="col-md-4 text-center">
-    <a class="btn btn-success fa fa-pencil" [routerLink]="['/todos', item.id, 'edit' ]">
+  <a class="btn btn-success fa fa-pencil" [routerLink]="['/todos', item.id, 'edit' ]">
       </a>
-  </div>
+  <a class="btn btn-success fa fa-trash" (click)="onDelete(item.id)">
+  </a>
+</div>

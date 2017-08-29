@@ -1,11 +1,10 @@
 <a class="btn btn-success" routerLink="/todos/add">+ ToDO</a>
 <div class="row">
-    <div class="col-md-2 text-center">Id</div>
-    <div class="col-md-4 text-center">Title</div>
-    <div class="col-md-2 text-center">Completed</div>
-    <div class="col-md-4 text-center"></div>
+  <div class="col-md-2 text-center">Id</div>
+  <div class="col-md-4 text-center">Title</div>
+  <div class="col-md-2 text-center">Completed</div>
+  <div class="col-md-4 text-center"></div>
 </div>
-  <div class="row" *ngFor="let item of todos">
-      <app-todo-item [item]="item"></app-todo-item>
-  </div>
-
+<div class="row" *ngFor="let item of todos">
+  <app-smart-todo-item [item]="item" (reloadTodos)="onRefresh()"></app-smart-todo-item>
+</div>

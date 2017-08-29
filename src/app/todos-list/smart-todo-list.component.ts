@@ -7,8 +7,10 @@ import { ToDoService } from '../todo/todo.service';
   styleUrls: []
 })
 export class SmartTodoListComponent {
-  constructor(private toDoService: ToDoService) {
-    console.log(this.toDoService.getToDos());
-  }
+  constructor(private toDoService: ToDoService) {}
   todos = this.toDoService.getToDos();
+
+  reloadTodos() {
+    this.todos = this.toDoService.getToDos();
+  }
 }

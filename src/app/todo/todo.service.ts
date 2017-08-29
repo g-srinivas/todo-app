@@ -14,8 +14,23 @@ export class ToDoService {
   }
 
   getToDoById(id: number) {
-    console.log(this.todos.get(id));
     return this.todos.get(id);
+  }
+
+  removeToDoItem(id: number) {
+    this.todos = this.todos.remove(id);
+  }
+
+  toogleToDoItem(todo: { id: number; complete: boolean }) {
+    const todoOriginal = this.getToDoById(todo.id);
+    this.todos = this.todos.set(
+      todo.id,
+      new ToDoItem({
+        id: todo.id,
+        title: todoOriginal.title,
+        complete: todo.complete
+      })
+    );
   }
 
   addToDo(todo: { title: string }) {

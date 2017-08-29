@@ -12,6 +12,7 @@ import { SmartTodoListComponent } from './todos-list/smart-todo-list.component';
 import { EditTodoItemComponent } from './edit-todo-item/edit-todo-item.component';
 import { SmartEditTodoItemComponent } from './edit-todo-item/smart-edit-todo-item.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
+import { SmartTodoItemComponent } from './todo-item/smart-todo-item.component';
 export const ROUTES: Routes = [
   { path: '', component: AppComponent },
   { path: 'todos', component: SmartTodoListComponent },
@@ -29,7 +30,8 @@ export const ROUTES: Routes = [
     SmartTodoListComponent,
     EditTodoItemComponent,
     SmartEditTodoItemComponent,
-    TodoItemComponent
+    TodoItemComponent,
+    SmartTodoItemComponent
   ],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(ROUTES)],
   providers: [ToDoService],
